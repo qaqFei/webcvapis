@@ -4,7 +4,7 @@ setuptools.setup(
     name = "webcvapis",
     version = "0.0.1",
     description = "WebCV APIs",
-    long_description = open("README.rst", "r", encoding="utf-8").read(),
+    long_description = open("README.md", "r", encoding="utf-8").read(),
     author = "qaqFei",
     author_email = "qaq_fei@163.com",
     url = "https://github.com/qaqFei/webcvapis",

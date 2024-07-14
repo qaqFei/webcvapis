@@ -21,4 +21,11 @@
     body_ele.appendChild(canvas_ele);
     ctx = canvas_ele.getContext("2d", {willReadFrequently: true});
     JavaScript_WaitToExecute_CodeArray = new Array();
+    
+    function process_jswteca() {
+        for(var i=0;i<JavaScript_WaitToExecute_CodeArray.length;i++){
+            eval(JavaScript_WaitToExecute_CodeArray[i]);
+        }
+        JavaScript_WaitToExecute_CodeArray = new Array();
+    }
 </script>

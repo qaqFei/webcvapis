@@ -485,7 +485,13 @@ class WebCanvas:
         self,name:str,
         callback:typing.Callable
     ) -> None:
-        setattr(self._web.events,name,getattr(self._web.events, name) + callback)
+        setattr(self._web.events, name, getattr(self._web.events, name) + callback)
+    
+    def dereg_event(
+        self,name:str,
+        callback:typing.Callable
+    ) -> None:
+        setattr(self._web.events, name, getattr(self._web.events, name) - callback)
     
     def loop_to_close(
         self

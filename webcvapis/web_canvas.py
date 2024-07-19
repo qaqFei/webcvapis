@@ -41,6 +41,8 @@ class WebCanvas_FileServerHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(data)
         else:
             self.wfile.write(bytes())
+    
+    def log_request(self, *args, **kwargs) -> None: ...
 
 class JsApi:
     def __init__(self) -> None:

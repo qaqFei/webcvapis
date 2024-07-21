@@ -275,7 +275,7 @@ class WebCanvas:
     def process_code_string_syntax_tostring(
         self,code:str
     ):
-        return code.replace("\\","\\\\").replace("'","\\'").replace("\"","\\\"").replace("`","\\`")
+        return code.replace("\\","\\\\").replace("'","\\'").replace("\"","\\\"").replace("`","\\`").replace("\n", "\\n")
     
     def process_code_string_syntax_tocode(
         self,code:str

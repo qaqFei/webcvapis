@@ -3,6 +3,7 @@ from ctypes import windll
 from os import chdir
 from os.path import abspath, dirname
 from sys import argv
+from random import randint
 import threading
 import typing
 import http.server
@@ -547,10 +548,14 @@ class WebCanvas:
         self._web_init_var.clear()
         self._web.events.closed += self._closed_callback
         
+        title = self._web.title
+        temp_title = self._web.title + " " * randint(0, 4096)
+        self._web.set_title(temp_title)
         while True:
-            self._web_hwnd = windll.user32.FindWindowW(None,self._web.title)
+            self._web_hwnd = windll.user32.FindWindowW(None, temp_title)
             if self._web_hwnd:
                 break
+        self._web.set_title(title)
         
         self._web_port = int(self._web._server.address.split(":")[2].split("/")[0])
         WebCanvas_FileServerHandler._canvas = self

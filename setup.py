@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name = "webcvapis",
-    version = "0.0.5",
+    version = "0.0.6",
     description = "WebCV APIs",
     long_description = open("README.md", "r", encoding="utf-8").read(),
     author = "qaqFei",
